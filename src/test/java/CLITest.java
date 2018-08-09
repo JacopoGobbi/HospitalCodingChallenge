@@ -12,11 +12,20 @@ class CLITest {
     }
 
     @Test
-    void testCLIParsing() {
+    void testCLIArgumentsLength() {
         String[] input = {};
         Assertions.assertThrows(
                 IllegalArgumentException.class,
                 () -> cli.process(input),
                 "Arguments should have been rejected");
+    }
+
+    @Test
+    void testCLIArgumentsFormat() {
+        String[] input = {"1,2", "E,C"};
+        Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> cli.process(input),
+                "Arguments format should have been rejected");
     }
 }
