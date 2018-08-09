@@ -13,10 +13,10 @@ class CLITest {
 
     @Test
     void testCLIParsing() {
-        String[] input = {"1234"};
+        String[] input = {};
         Assertions.assertThrows(
                 IllegalArgumentException.class,
-                () -> cli.parseInput(input),
+                () -> cli.process(input),
                 "Arguments should have been rejected");
     }
 }
