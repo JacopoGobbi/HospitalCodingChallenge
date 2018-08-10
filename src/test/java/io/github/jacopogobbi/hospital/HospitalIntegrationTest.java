@@ -1,6 +1,5 @@
 package io.github.jacopogobbi.hospital;
 
-import io.github.jacopogobbi.Hospital;
 import io.github.jacopogobbi.hospital.domain.Divinity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
