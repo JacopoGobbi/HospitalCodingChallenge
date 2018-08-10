@@ -22,6 +22,7 @@ public class Patient {
             this.hasReceivedEffectiveTreatment =
                     !this.hasReceivedEffectiveTreatment ? results._2 : this.hasReceivedEffectiveTreatment;
             this.drugsAdministered.add(drug);
+            this.state = results._1;
         }
     }
 

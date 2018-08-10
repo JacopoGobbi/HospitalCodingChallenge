@@ -34,4 +34,11 @@ class HospitalIntegrationTest {
         hospital.treatPatients(new String[] {"D,D"});
         Assertions.assertEquals(expected, outContent.toString().trim());
     }
+
+    @Test
+    void testExample2() {
+        String expected = "F:0,H:1,D:0,T:0,X:0";
+        hospital.treatPatients(new String[] {"F", "P"});
+        Assertions.assertEquals(expected, outContent.toString().trim());
+    }
 }
