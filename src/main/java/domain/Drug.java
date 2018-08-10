@@ -1,5 +1,13 @@
 package domain;
 
+/**
+ * Drug enum holding the drugs name that can be provided to patients
+ *
+ * As: ASPIRIN
+ * An: ANTIBIOTIC
+ * I: INSULIN
+ * P: PARACETAMOL
+ */
 public enum Drug {
-    ASPIRIN, ANTIBIOTIC, INSULIN, PARACETAMOL
+    As, An, I, P
 }
