@@ -11,23 +11,19 @@ import java.io.PrintStream;
 
 class HospitalIntegrationTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
-    private final PrintStream originalErr = System.err;
     private final class MalignantDivinity implements Divinity {}
     private Hospital hospital;
 
     @BeforeEach
     void setUp() {
         System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
         hospital = new Hospital(new MalignantDivinity());
     }
 
     @AfterEach
     void tearDown() {
         System.setOut(originalOut);
-        System.setErr(originalErr);
     }
 
     @Test

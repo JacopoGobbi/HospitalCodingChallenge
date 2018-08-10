@@ -30,7 +30,7 @@ public class CLI {
                     PATIENTS_FORMAT.matcher(args[0]).matches() &&
                     DRUGS_FORMAT.matcher(args[1]).matches())
         ) {
-            return new Tuple<>(args[0], args[1]);
+            return new Tuple<>(args[0], args.length == 1 ? null : args[1]);
         } else {
             throw new IllegalArgumentException("Please provide a list of patients and (optional) drugs");
         }
