@@ -3,6 +3,7 @@ import domain.Drug;
 import domain.Patient;
 import domain.State;
 import utils.CLI;
+import utils.Tuple;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;
@@ -21,11 +22,11 @@ class Hospital {
 
     void treatPatients(String[] args) {
         try {
-            final List<String> patAndDrugs = CLI.validate(args);
+            final Tuple<String, String> patAndDrugs = CLI.validate(args);
             // Retrieves patients
-            final String[] patients = patAndDrugs.get(0).split(",");
+            final String[] patients = patAndDrugs._1.split(",");
             // Retrieves drugs (if present) and get their values into a supplier
-            final String[] drugsStr = patAndDrugs.size() > 1 ? patAndDrugs.get(1).split(",") : new String[]{};
+            final String[] drugsStr = patAndDrugs._2 != null ? patAndDrugs._2.split(",") : new String[]{};
             final Supplier<Stream<Drug>> drugs = () -> Arrays.stream(drugsStr).map(Drug::valueOf);
             // Administer drugs to patients
             final List<Patient> treatedPatients = Arrays.stream(patients)
