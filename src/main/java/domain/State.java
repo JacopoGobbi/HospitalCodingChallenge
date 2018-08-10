@@ -25,11 +25,19 @@ public enum State {
                     resultingState = H;
                     hasReceivedEffectiveTreatment = true;
                 }
+                if (drugsAdministered.contains(Drug.P)) {
+                    resultingState = X;
+                    hasReceivedEffectiveTreatment = true;
+                }
                 break;
             case An:
                 // Antibiotic cures Tuberculosis
                 if (this == T) {
                     resultingState = H;
+                    hasReceivedEffectiveTreatment = true;
+                }
+                if (drugsAdministered.contains(Drug.I)) {
+                    resultingState = X;
                     hasReceivedEffectiveTreatment = true;
                 }
                 break;
