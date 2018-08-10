@@ -1,4 +1,7 @@
-import domain.Divinity;
+package io.github.jacopogobbi.hospital;
+
+import io.github.jacopogobbi.Hospital;
+import io.github.jacopogobbi.hospital.domain.Divinity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -60,6 +63,24 @@ class HospitalIntegrationTest {
     void testInsulineAndAntibioticKillsEverybody() {
         String expected = "F:0,H:0,D:0,T:0,X:6";
         hospital.treatPatients(new String[] {"F,H,D,T,T,X", "I,An"});
+        Assertions.assertEquals(expected, outContent.toString().trim());
+    }
+
+    /**
+     * Test if "hasReceivedEffectiveTreatment" logic works allowing people to die if they did not receive a valid
+     * treatment
+     */
+    @Test
+    void testEverybodyDies() {
+        String expected = "F:0,H:0,D:0,T:0,X:4";
+        hospital.treatPatients(new String[] {"F,F,D,X", "An"});
+        Assertions.assertEquals(expected, outContent.toString().trim());
+    }
+
+    @Test
+    void testEverythingTogether() {
+        String expected = "F:0,H:0,D:0,T:0,X:10";
+        hospital.treatPatients(new String[] {"X,T,D,H,F,F,H,D,T,X", "I,As,An,P"});
         Assertions.assertEquals(expected, outContent.toString().trim());
     }
 }

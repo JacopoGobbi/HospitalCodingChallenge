@@ -1,6 +1,6 @@
-package domain;
+package io.github.jacopogobbi.hospital.domain;
 
-import utils.Tuple;
+import io.github.jacopogobbi.hospital.utils.Tuple;
 
 import java.util.List;
 
@@ -15,6 +15,14 @@ import java.util.List;
  */
 public enum State {
     F, H, D, T, X;
+
+    /**
+     * Administer a drug to a patient changing its state
+     *
+     * @param drug drug to administer
+     * @param drugsAdministered all drugs administered until now
+     * @return a tuple containing the resulting state and if the current treatment had any sort of effect
+     */
     Tuple<State, Boolean> administer(Drug drug, List<Drug> drugsAdministered) {
         State resultingState = this;
         boolean hasReceivedEffectiveTreatment = false;

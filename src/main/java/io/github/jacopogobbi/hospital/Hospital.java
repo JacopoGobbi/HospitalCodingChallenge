@@ -1,9 +1,11 @@
-import domain.Divinity;
-import domain.Drug;
-import domain.Patient;
-import domain.State;
-import utils.CLI;
-import utils.Tuple;
+package io.github.jacopogobbi.hospital;
+
+import io.github.jacopogobbi.hospital.domain.Divinity;
+import io.github.jacopogobbi.hospital.domain.Drug;
+import io.github.jacopogobbi.hospital.domain.Patient;
+import io.github.jacopogobbi.hospital.domain.State;
+import io.github.jacopogobbi.hospital.utils.CLI;
+import io.github.jacopogobbi.hospital.utils.Tuple;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

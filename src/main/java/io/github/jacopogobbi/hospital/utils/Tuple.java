@@ -1,4 +1,4 @@
-package utils;
+package io.github.jacopogobbi.hospital.utils;
 
 public class Tuple<X, Y> {
     public final X _1;

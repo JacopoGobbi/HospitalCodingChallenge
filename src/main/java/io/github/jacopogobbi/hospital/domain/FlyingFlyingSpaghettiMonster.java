@@ -1,4 +1,4 @@
-package domain;
+package io.github.jacopogobbi.hospital.domain;
 
 import java.util.Random;
 

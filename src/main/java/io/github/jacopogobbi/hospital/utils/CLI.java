@@ -1,9 +1,6 @@
-package utils;
+package io.github.jacopogobbi.hospital.utils;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * Command Line Interface class

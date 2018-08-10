@@ -1,4 +1,4 @@
-package utils;
+package io.github.jacopogobbi.hospital.utils;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
