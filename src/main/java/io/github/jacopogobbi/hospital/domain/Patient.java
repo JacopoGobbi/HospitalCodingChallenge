@@ -1,7 +1,5 @@
 package io.github.jacopogobbi.hospital.domain;
 
-import io.github.jacopogobbi.hospital.utils.Tuple;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +21,7 @@ public class Patient {
      */
     public void administer(Drug drug) {
         if (state != State.X) {
-            Tuple<State, Boolean> results = state.administer(drug, drugsAdministered);
+            final var results = state.administer(drug, drugsAdministered);
             this.hasReceivedEffectiveTreatment =
                     !this.hasReceivedEffectiveTreatment ? results._2 : this.hasReceivedEffectiveTreatment;
             this.drugsAdministered.add(drug);

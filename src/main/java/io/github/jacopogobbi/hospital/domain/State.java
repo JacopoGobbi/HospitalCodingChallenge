@@ -24,8 +24,8 @@ public enum State {
      * @return a tuple containing the resulting state and if the current treatment had any sort of effect
      */
     Tuple<State, Boolean> administer(Drug drug, List<Drug> drugsAdministered) {
-        State resultingState = this;
-        boolean hasReceivedEffectiveTreatment = false;
+        var resultingState = this;
+        var hasReceivedEffectiveTreatment = false;
         switch (drug) {
             case As:
                 // Aspirin cures Fever
